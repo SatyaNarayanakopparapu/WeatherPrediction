@@ -9,14 +9,14 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        git branch: 'main', url: 'git@github.com:SatyaNarayanakopparapu/weatherApp-master.git'
+        git branch: 'main', url: 'git@github.com:SatyaNarayanakopparapu/weatherPrediction.git'
       }
     }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        sh 'cd weatherApp-master && mvn clean package'
+        sh 'cd weatherPrediction && mvn clean package'
       }
     }
     stage('Static Code Analysis') {
@@ -32,7 +32,7 @@ pipeline {
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "satyak/weather-cicd:${BUILD_NUMBER}"
-        DOCKERFILE_LOCATION = "weatherApp-master/Dockerfile"
+        DOCKERFILE_LOCATION = "weatherPrediction/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
       steps {
@@ -56,8 +56,8 @@ pipeline {
                     git config user.email "satyak4me@gmail.com"
                     git config user.name "SatyaNarayanaKopparapu"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" weatherApp-master-manifests/deployment.yml
-                    git add weatherApp-master-manifests/deployment.yml
+                    sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" weatherPrediction-manifests/deployment.yml
+                    git add weatherPrediction-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '''
