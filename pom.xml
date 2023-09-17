@@ -116,7 +116,7 @@
 
 	<repositories>
 		<repository>
-			<id>myMavenRepo.read</id>
+			<id>github</id>
 			<url>https://github.com/SatyaNarayanakopparapu/ArtifactsStorage/tree/main</url>
 			<snapshots>
 				<enabled>true</enabled>
@@ -127,7 +127,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>myMavenRepo.write</id>
+			<id>github</id>
+			<name>GitHub Packages</name>
 			<url>https://github.com/SatyaNarayanakopparapu/ArtifactsStorage/tree/main</url>
 		</repository>
 	</distributionManagement>
