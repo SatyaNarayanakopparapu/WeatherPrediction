@@ -114,4 +114,22 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>myMavenRepo.read</id>
+			<url>https://github.com/SatyaNarayanakopparapu/ArtifactsStorage/tree/main</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>myMavenRepo.write</id>
+			<url>https://github.com/SatyaNarayanakopparapu/ArtifactsStorage/tree/main</url>
+		</repository>
+	</distributionManagement>
+
 </project>

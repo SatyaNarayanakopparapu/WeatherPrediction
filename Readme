@@ -1,0 +1,22 @@
+Project: weatherPrediction java spring boot application.
+Description:
+Integrated open weather api to fetch weather information.
+Weather data will be fetched in json format and data is fetched every four hours and can be calculated average weather report.
+Prepared UI to display this report in JSP as part of MVC model.
+
+Technical Doc:
+Developed weatherService fetches weather report.
+Developed jenkins pipeline to build continuously and generated artifact and place artifact in free trusted repos.
+Installed Docker in mac os. current version is Docker version 24.0.6, build ed223bc820.
+Installer Docker desktop in mac os.
+Developer dockerfile and ran them using below commands.
+a.go to project dir and run below command. image name is weatherprediction (small case only here)
+    docker image build . -t weatherprediction
+b.Run docker image using below command
+    docker run -dp 127.0.0.1:8083:8083 weatherprediction
+
+More info on docker.
+https://docs.docker.com/get-started/02_our_app/
+
+
+
