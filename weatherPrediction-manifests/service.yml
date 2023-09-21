@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: weatherPrediction-service
+  name: weatherprediction
 spec:
   type: NodePort
   ports:
@@ -10,4 +10,4 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    app: weatherPrediction
+    app: weatherprediction

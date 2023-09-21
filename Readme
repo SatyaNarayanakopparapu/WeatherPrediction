@@ -18,5 +18,13 @@ b.Run docker image using below command
 More info on docker.
 https://docs.docker.com/get-started/02_our_app/
 
-
+Push docker image to your own docker hub:
+open command prompt and login as a dockerhub userid (satyakcyril)
+docker login -u satyakcyril
+docker image ls - to list existing docker images.
+docker tag weatherprediction satyakcyril/weatherprediction
+docker image ls - to list existing docker images. - you can see image with satyakcyril/weatherprediction
+docker push satyakcyril/weatherprediction - to move it docker hub
+Run docker image using below command
+    docker run -dp 127.0.0.1:8083:8083 satyakcyril/weatherprediction
 

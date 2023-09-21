@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weatherPrediction
+  name: weatherprediction
   labels:
-    app: weatherPrediction
+    app: weatherprediction
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: weatherPrediction
+      app: weatherprediction
   template:
     metadata:
       labels:
-        app: weatherPrediction
+        app: weatherprediction
     spec:
       containers:
-        - name: weatherPrediction
-          image: satyak/weather-cicd:replaceImageTag
+        - name: weatherprediction
+          image: satyakcyril/weatherprediction
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
