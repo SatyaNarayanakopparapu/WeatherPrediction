@@ -6,8 +6,9 @@ spec:
   type: NodePort
   ports:
     - name: http
-      port: 80
-      targetPort: 8080
+      port: 8083
+      targetPort: 8083
+      nodePort: 30005
       protocol: TCP
   selector:
     app: weatherprediction

@@ -28,3 +28,9 @@ docker push satyakcyril/weatherprediction - to move it docker hub
 Run docker image using below command
     docker run -dp 127.0.0.1:8083:8083 satyakcyril/weatherprediction
 
+-install minikube and start
+install Docker
+brew install minikube
+minikube start --driver=docker --alsologtostderr
+https://cs101.blog/2023/01/12/run-a-minikube-on-mac-with-m1-chip/
+
